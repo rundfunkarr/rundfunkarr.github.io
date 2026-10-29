@@ -55,8 +55,14 @@ Weboberfläche unter **Rulesets** anlegen und prüfen.
   `GreaterThan`, `LessThan`
 - **`titleRegexRules`**: Regeln, aus denen der Episodentitel für den Abgleich zusammengesetzt wird
 - **`episodeRegex`** / **`seasonRegex`**: Regex zum Auslesen von Episoden- und Staffelnummer
+  (jeweils erste Klammergruppe)
 - **`matchingStrategy`**:
   - `SeasonAndEpisodeNumber`: Staffel und Episode aus dem Titel (S01E01)
+  - `ByAbsoluteEpisodeNumber`: fortlaufende Folgennummer aus `episodeRegex`, etwa bei Daily
+    Soaps wie „Sturm der Liebe“ („Folge 4663“). Nummeriert TVDB die Serie über alle Staffeln
+    fortlaufend, ist die Episodennummer selbst die Folgennummer. Sonst werden die regulären
+    Folgen abgezählt, aber nur, wenn keine Staffel und keine Folge in den Metadaten fehlt;
+    andernfalls bleibt der Treffer unzugeordnet.
   - `ItemTitleIncludes`: zusammengesetzter Titel ähnelt dem Episodentitel (Schwellwert aus den
     Einstellungen)
   - `ItemTitleExact`: wie oben, aber strenger
