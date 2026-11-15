@@ -60,6 +60,8 @@ curl -s -d "Fertig: $3 ($5)" https://ntfy.sh/mein-thema
   entfernt. Nach dem Fortsetzen wird sie neu geladen.
 - Verschiebt oder löscht das Skript die Videodatei, kann Sonarr/Radarr sie nicht mehr
   importieren.
+- Bei den gemeinsamen [Ablagen](./konfiguration#ablage-der-downloads) ist `$1` der
+  Kategorie-Ordner oder der Download-Pfad selbst und enthält auch andere Downloads.
 - Auswählbar sind nur Dateien aus dem Skriptordner. Den Ordner legt ausschließlich
   `POST_PROCESS_SCRIPTS_DIR` fest; über die Weboberfläche lässt er sich nicht ändern.
 
