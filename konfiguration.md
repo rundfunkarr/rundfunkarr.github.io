@@ -45,6 +45,24 @@ Datenbank-Einstellungen übernommen. **Bereits gespeicherte Werte haben Vorrang.
 Downloads, Skripte und Imports; `debug` ergänzt Details zu Suchschritten, Regelwerken,
 Metadaten-Abfragen und Downloadschritten. Ungültige Werte werden mit einer Warnung ignoriert.
 
+## Ablage der Downloads
+
+Unter Einstellungen → Allgemein → **Ablage** legst du fest, wo fertige Dateien im Download-Pfad
+landen. Manuelle Downloads ohne Kategorie gehören zur Kategorie `default`.
+
+| Ablage | Beispiel |
+|--------|----------|
+| Eigener Ordner pro Download (Standard) | `/downloads/tv/<ID>/Tatort.mkv` |
+| Ordner pro Kategorie | `/downloads/tv/Tatort.mkv` |
+| Direkt im Download-Pfad | `/downloads/Tatort.mkv` |
+
+Der eigene Ordner pro Download entspricht SABnzbd. In den beiden gemeinsamen Ablagen überschreibt
+RundfunkArr keine vorhandene Datei: Gibt es den Namen schon, bekommt der neue Download einen
+Zusatz wie `Tatort (2).mkv`. „Löschen mit Dateien“ entfernt nur die Datei, die dieser Download
+abgelegt hat, auch wenn inzwischen eine andere unter demselben Namen liegt. Sonarr und Radarr
+importieren in allen drei Ablagen die einzelne Datei. Post-Processing-Skripte erhalten in den gemeinsamen Ablagen den gemeinsamen Ordner als
+`$1`; ein Skript darf diesen Ordner dann nicht als Ganzes löschen.
+
 ## Metadaten-Quellen
 
 RundfunkArr sucht Show-Informationen in dieser Reihenfolge:
@@ -64,7 +82,7 @@ siehe [Rulesets & Shows](./rulesets).
 - **Suchabos**: Suchbegriffe regelmäßig prüfen und neue Sendungen melden oder laden
 - **Serien** und **Filme**: zwischengespeicherte Serien aus TVDB und Filmsuche in den Mediatheken
 - **Rulesets**: Zuordnungsregeln ansehen, prüfen und lokal überschreiben
-- **Einstellungen**: Download-Pfad, Qualität, Untertitel, MKV-Konvertierung, API-Keys
+- **Einstellungen**: Download-Pfad, Ablage, Qualität, Untertitel, MKV-Konvertierung, API-Keys
   (TVDB/TMDB/SRG SSR), Matching-Strategie und Schwellwerte,
   [Benachrichtigungen](./benachrichtigungen), Cache-TTL, Darstellung
 - **Diagnose & Protokoll**: Systemdiagnose, Verbindungstest und Serverprotokoll

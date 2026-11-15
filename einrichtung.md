@@ -32,5 +32,6 @@ konfigurierter Download-Client wird nur für manuelle Downloads aus Prowlarr ver
 Sonarr und Radarr importieren die fertige Datei über den Pfad, den RundfunkArr meldet. Sieht die
 *arr-App den Download-Ordner unter einem anderen Pfad als RundfunkArr (etwa in einem anderen
 Container), trägt `DOWNLOAD_FOLDER_PATH_MAPPING` diesen Pfad ein. RundfunkArr meldet dann
-`<Mapping>/<Kategorie>/<Download-ID>/<Datei>` statt des eigenen Pfads. Alle Umgebungsvariablen
+`<Mapping>/<Kategorie>/<Download-ID>/<Datei>` statt des eigenen Pfads; bei einer anderen
+[Ablage](./konfiguration#ablage-der-downloads) entfallen die Ordner entsprechend. Alle Umgebungsvariablen
 stehen unter [Konfiguration](./konfiguration#umgebungsvariablen).
